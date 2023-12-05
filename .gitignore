@@ -1,0 +1,11 @@
+.qmake.stash
+connect-4
+connect4widget.o
+main.o
+mainwindow.o
+Makefile
+moc_connect4widget.cpp
+moc_connect4widget.o
+moc_mainwindow.cpp
+moc_mainwindow.o
+moc_predefs.h
