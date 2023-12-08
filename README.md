@@ -7,3 +7,17 @@ Get dependencies (probably qmake, QT dev, build-essentials), then run:
  - qmake
  - make
  - ./connect-4
+
+# Features
+## Finished
+ - Restart game without exiting.
+ - Play as either red or yellow.
+ - Play against computer.
+ - - Computer "AI" just makes random moves.
+
+## Unfinished
+ - 2-player mode.
+ - Play-piece dropping animation
+ - Game status displayed as text (your move, you win, computer wins, player one's move, etc.)
+ - Refactor to use more classes - currently only uses a MainWindow and Widget derives class.
+ - - Could maybe use Player class, PlayPiece class
