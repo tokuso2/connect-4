@@ -8,10 +8,16 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
 
     mainLayout->setRowStretch(1, 1);
 
-    this->statusText = new QLabel(this);
+    QGraphicsDropShadowEffect* effect = new QGraphicsDropShadowEffect();
+    effect->setOffset(0.5, 0.5);
+    effect->setColor(QColor(50, 50, 50));
+
     this->statusTextFont = new QFont();
     this->statusTextFont->setPixelSize(20);
-    this->statusTextFont->setWeight(QFont::Bold);
+    this->statusTextFont->setWeight(QFont::Normal);
+
+    this->statusText = new QLabel(this);
+    this->statusText->setGraphicsEffect(effect);
     this->statusText->setFont(*statusTextFont);
     this->statusText->setText("You are playing as <font color=\"red\">Red</font>");
     mainLayout->addWidget(this->statusText, 0, 0, 1, -1, Qt::AlignCenter);
