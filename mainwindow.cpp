@@ -14,9 +14,11 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
 
     this->statusTextFont = new QFont();
     this->statusTextFont->setPixelSize(20);
-    this->statusTextFont->setWeight(QFont::Normal);
+    this->statusTextFont->setWeight(QFont::DemiBold);
 
     this->statusText = new QLabel(this);
+    this->statusText->setGraphicsEffect(effect);
+    effect->setOffset(-0.5, -0.5);
     this->statusText->setGraphicsEffect(effect);
     this->statusText->setFont(*statusTextFont);
     this->statusText->setText("You are playing as <font color=\"red\">Red</font>");
