@@ -8,6 +8,13 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
 
     mainLayout->setRowStretch(1, 1);
 
+    this->statusText = new QLabel(this);
+    QFont font;
+    font.setPixelSize(20);
+    this->statusText->setFont(font);
+    this->statusText->setText("You are playing as <font color=\"red\">Red</font>");
+    mainLayout->addWidget(this->statusText, 0, 0, 1, -1, Qt::AlignCenter);
+
     this->connect4Widget = new Connect4Widget(centralWidget);
     mainLayout->addWidget(connect4Widget, 1, 0, 1, -1, Qt::AlignCenter);
 
