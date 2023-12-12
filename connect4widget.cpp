@@ -3,6 +3,8 @@
 #include <QPen>
 #include <QColor>
 #include <QRadialGradient>
+#include <QLabel>
+
 #include <iostream>
 #include <chrono>
 #include <thread>
@@ -164,10 +166,10 @@ void Connect4Widget::changePlayer() {
 
 void Connect4Widget::computerMove() {
     if (gameFinished == false) {
-        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+        // std::this_thread::sleep_for(std::chrono::milliseconds(500));
         bool attemptedMove = false;
         while (attemptedMove == false) {
-            int randomMove = rand() % 6;
+            int randomMove = rand() % 7;
             attemptedMove = insertToCol(randomMove);
         }
         changePlayer();
