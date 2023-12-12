@@ -1,3 +1,4 @@
+.vscode
 .qmake.stash
 connect-4
 connect4widget.o
