@@ -9,9 +9,10 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
     mainLayout->setRowStretch(1, 1);
 
     this->statusText = new QLabel(this);
-    QFont font;
-    font.setPixelSize(20);
-    this->statusText->setFont(font);
+    this->statusTextFont = new QFont();
+    this->statusTextFont->setPixelSize(20);
+    this->statusTextFont->setWeight(QFont::Bold);
+    this->statusText->setFont(*statusTextFont);
     this->statusText->setText("You are playing as <font color=\"red\">Red</font>");
     mainLayout->addWidget(this->statusText, 0, 0, 1, -1, Qt::AlignCenter);
 
@@ -20,7 +21,7 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
 
     // Set up the player selection buttons.
     QHBoxLayout* buttonLayout2 = new QHBoxLayout();
-    this->playAsPlayerOneButton = new QPushButton("Play as red", centralWidget);
+    this->playAsPlayerOneButton= new QPushButton("Play as red", centralWidget);
     this->playAsPlayerTwoButton = new QPushButton("Play as yellow", centralWidget);
     this->playAsPlayerOneButton->setCheckable(true);
     this->playAsPlayerOneButton->setChecked(true);
@@ -65,12 +66,14 @@ void MainWindow::onPlayAsPlayerOneButtonClicked() {
     this->connect4Widget->playAsPlayerOne();
     this->playAsPlayerOneButton->setChecked(true);
     this->playAsPlayerTwoButton->setChecked(false);
+    this->statusText->setText("You are playing as <font color=\"red\">Red</font>");
 }
 
 void MainWindow::onPlayAsPlayerTwoButtonClicked() {
     this->connect4Widget->playAsPlayerTwo();
     this->playAsPlayerTwoButton->setChecked(true);
     this->playAsPlayerOneButton->setChecked(false);
+    this->statusText->setText("You are playing as <font color=\"yellow\">Yellow</font>");
 }
 
 MainWindow::~MainWindow() {

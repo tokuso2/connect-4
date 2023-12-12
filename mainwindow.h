@@ -5,6 +5,7 @@
 #include <QGridLayout>
 #include <QPushButton>
 #include <QLabel>
+#include <QGraphicsEffect>
 #include "connect4widget.h"
 
 class MainWindow : public QMainWindow {
@@ -22,6 +23,7 @@ private slots:
 private:
     Connect4Widget* connect4Widget;
     QLabel* statusText;
+    QFont* statusTextFont;
     QWidget* centralWidget;
     QPushButton* restartButton;
     QPushButton* exitButton;
